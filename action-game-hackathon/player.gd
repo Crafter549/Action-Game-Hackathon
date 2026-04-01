@@ -6,9 +6,13 @@ extends CharacterBody2D
 @export var xDec = 100 # tiles / second^2
 @export var maxXVel = 12 # tiles / second
 
-@export var gravity = 50 # tiles / second^2
-@export var jumpVel = 16 # tiles / second
-@export var maxYVel = 24 # tiles / second
+@export var gravity = 60 # tiles / second^2
+@export var jumpVel = 15 # tiles / second
+@export var maxYVel = 20 # tiles / second
+
+var groundedTimer = INF
+var jumpInputTimer = INF
+var jumpTimer = INF
 
 func _physics_process(delta):
 	var acc = Vector2(0, 0) # tiles / second^2
@@ -40,8 +44,23 @@ func _physics_process(delta):
 	
 	acc.y = gravity
 	
-	if is_on_floor() && Input.is_action_just_pressed("jump"):
+	if is_on_floor():
+		groundedTimer = 0
+	if Input.is_action_just_pressed("jump"):
+		jumpInputTimer = 0
+	if groundedTimer <= 0.1 && jumpInputTimer <= 0.1:
+		groundedTimer = INF
+		jumpInputTimer = INF
+		jumpTimer = 0
+	
+	if jumpTimer <= 0.15 && Input.is_action_pressed("jump"):
 		vel.y = -jumpVel
+	else:
+		jumpTimer = INF
+	
+	groundedTimer += delta
+	jumpInputTimer += delta
+	jumpTimer += delta
 	
 	vel += acc * delta
 	vel.x = clamp(vel.x, -maxXVel, maxXVel)
