@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Action Game Hackathon"
-run/main_scene="uid://cdh41pygpcy4l"
+run/main_scene="uid://u20wdu0nmu3n"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -21,10 +21,16 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
 
+[layer_names]
+
+2d_physics/layer_1="Foreground Tiles"
+2d_physics/layer_2="Player"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
