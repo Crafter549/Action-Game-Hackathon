@@ -9,7 +9,7 @@
 [node name="ForegroundTiles" parent="." unique_id=1369031904 instance=ExtResource("1_h2yge")]
 
 [node name="Bullet" parent="." unique_id=1353440972 instance=ExtResource("1_ig7tw")]
-gravity_scale = 1.0
-constant_force = Vector2(100, -1000)
+position = Vector2(1334, 647)
 
 [node name="Player" parent="." unique_id=71939808 instance=ExtResource("3_1bvp3")]
+position = Vector2(349, 790)

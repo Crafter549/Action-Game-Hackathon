@@ -7,7 +7,6 @@ radius = 34.0
 height = 131.47119
 
 [node name="Bullet" type="RigidBody2D" unique_id=1353440972]
-gravity_scale = 0.0
 script = ExtResource("1_v7oki")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=880795885]
