@@ -1,9 +1,15 @@
 [gd_scene format=3 uid="uid://cdh41pygpcy4l"]
 
+[ext_resource type="PackedScene" path="res://foreground_tiles.tscn" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://biflxekjcrqnc" path="res://bullet.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://tkvt5s2f4udi" path="res://player.tscn" id="3_1bvp3"]
 
 [node name="Main" type="Node" unique_id=1608259095]
+
+[node name="ForegroundTiles" parent="." unique_id=1369031904 instance=ExtResource("1_h2yge")]
 
 [node name="Bullet" parent="." unique_id=1353440972 instance=ExtResource("1_ig7tw")]
 gravity_scale = 1.0
 constant_force = Vector2(100, -1000)
+
+[node name="Player" parent="." unique_id=71939808 instance=ExtResource("3_1bvp3")]
