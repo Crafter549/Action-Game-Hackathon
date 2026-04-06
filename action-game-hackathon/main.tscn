@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cdh41pygpcy4l"]
 
-[ext_resource type="PackedScene" path="res://foreground_tiles.tscn" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bcnjyqx35idpq" path="res://foreground_tiles.tscn" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://biflxekjcrqnc" path="res://bullet.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://tkvt5s2f4udi" path="res://player.tscn" id="3_1bvp3"]
 
