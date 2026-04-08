@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://biflxekjcrqnc"]
 
-[ext_resource type="Script" path="res://bullet.gd" id="1_v7oki"]
+[ext_resource type="Script" uid="uid://duppkf5vfawbb" path="res://bullet.gd" id="1_v7oki"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v7oki"]
+friction = 0.0
+bounce = 10.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v7oki"]
 radius = 34.0
@@ -8,7 +12,8 @@ height = 131.47119
 
 [node name="Bullet" type="RigidBody2D" unique_id=1353440972]
 collision_layer = 4
-collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_v7oki")
+linear_damp_mode = 1
 script = ExtResource("1_v7oki")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=880795885]
@@ -21,3 +26,8 @@ offset_bottom = 72.0
 position = Vector2(91, 41.000004)
 rotation = 1.5551028
 shape = SubResource("CapsuleShape2D_v7oki")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=232950339]
+rect = Rect2(7, -5, 177, 99)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
