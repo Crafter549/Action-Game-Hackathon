@@ -4,8 +4,6 @@ extends Node
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("mouse_click"):
-		print("benwquiy")
-		
 		var bullet = bullet_scene.instantiate()
 		
 		bullet.position = $Player.position
