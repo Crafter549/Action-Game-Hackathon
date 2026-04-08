@@ -68,3 +68,6 @@ func _physics_process(delta):
 	
 	velocity = vel * tileSize
 	move_and_slide()
+
+func _on_hurtbox_body_entered(body):
+	pass # Kill player
