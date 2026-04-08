@@ -10,6 +10,7 @@ script = ExtResource("1_7k104")
 
 [node name="Shoot timer" type="Timer" parent="." unique_id=1176632923]
 wait_time = 2.0
+autostart = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1745386437]
 offset_right = 76.0
