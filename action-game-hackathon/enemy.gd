@@ -3,8 +3,9 @@ extends CharacterBody2D
 
 func _on_shoot_timer_timeout() -> void:
 	var bullet =bullet_scene.instantiate()
-	bullet.position=position
-	bullet.linear_velocity.x=-1000
+	
+	bullet.linear_velocity.x=-2000
+	add_child(bullet)
 	
 	
 	

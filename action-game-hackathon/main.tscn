@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dt83dhf7y8gn1" path="res://main.gd" id="1_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://bcnjyqx35idpq" path="res://foreground_tiles.tscn" id="1_h2yge"]
-[ext_resource type="PackedScene" uid="uid://biflxekjcrqnc" path="res://bullet.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://tkvt5s2f4udi" path="res://player.tscn" id="3_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://dq6h8ugxeu2ck" path="res://enemy.tscn" id="5_lquwl"]
 
@@ -10,9 +9,6 @@
 script = ExtResource("1_1bvp3")
 
 [node name="ForegroundTiles" parent="." unique_id=1369031904 instance=ExtResource("1_h2yge")]
-
-[node name="Bullet" parent="." unique_id=1353440972 instance=ExtResource("1_ig7tw")]
-position = Vector2(1463, 679)
 
 [node name="Player" parent="." unique_id=71939808 instance=ExtResource("3_1bvp3")]
 position = Vector2(960, 540)
