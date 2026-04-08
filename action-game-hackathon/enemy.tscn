@@ -27,9 +27,11 @@ _bundled = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
-size = Vector2(84, 161)
+size = Vector2(60, 120)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1829678613]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_7k104")
 bullet_scene = SubResource("PackedScene_qi2p4")
 
@@ -37,13 +39,14 @@ bullet_scene = SubResource("PackedScene_qi2p4")
 autostart = true
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1745386437]
-offset_right = 76.0
-offset_bottom = 159.0
+offset_left = -30.0
+offset_top = -60.0
+offset_right = 30.0
+offset_bottom = 60.0
 color = Color(0.013555806, 0.01264872, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1636266470]
-position = Vector2(39, 80.5)
 shape = SubResource("RectangleShape2D_4gyqm")
 
 [connection signal="timeout" from="Shoot timer" to="." method="_on_shoot_timer_timeout"]
