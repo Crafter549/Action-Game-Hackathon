@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://dq6h8ugxeu2ck"]
 
 [ext_resource type="Script" uid="uid://cpjpl1syahba5" path="res://enemy.gd" id="1_7k104"]
+[ext_resource type="PackedScene" uid="uid://biflxekjcrqnc" path="res://bullet.tscn" id="2_4gyqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
 size = Vector2(84, 161)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=1829678613]
 script = ExtResource("1_7k104")
+bullet_scene = ExtResource("2_4gyqm")
 
 [node name="Shoot timer" type="Timer" parent="." unique_id=1176632923]
 wait_time = 2.0
