@@ -6,6 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
 size = Vector2(60, 120)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qi2p4"]
+size = Vector2(67, 127)
+
 [node name="Enemy" type="CharacterBody2D" unique_id=1829678613]
 collision_layer = 0
 collision_mask = 0
@@ -26,4 +29,14 @@ metadata/_edit_use_anchors_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1636266470]
 shape = SubResource("RectangleShape2D_4gyqm")
 
+[node name="Hurtbox" type="Area2D" parent="." unique_id=248326654]
+position = Vector2(40, 5)
+collision_layer = 0
+collision_mask = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1206414839]
+position = Vector2(-40.5, -5.5)
+shape = SubResource("RectangleShape2D_qi2p4")
+
 [connection signal="timeout" from="Shoot timer" to="." method="_on_shoot_timer_timeout"]
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]

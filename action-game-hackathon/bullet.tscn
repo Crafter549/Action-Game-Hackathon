@@ -11,7 +11,7 @@ radius = 12.0
 height = 44.0
 
 [node name="Bullet" type="RigidBody2D" unique_id=1353440972]
-collision_layer = 4
+collision_layer = 0
 physics_material_override = SubResource("PhysicsMaterial_v7oki")
 contact_monitor = true
 max_contacts_reported = 10
@@ -31,5 +31,10 @@ shape = SubResource("CapsuleShape2D_v7oki")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=232950339]
 rect = Rect2(-40, -20, 80, 40)
 
+[node name="Inital Timer" type="Timer" parent="." unique_id=1329141652]
+wait_time = 0.1
+autostart = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="timeout" from="Inital Timer" to="." method="_on_inital_timer_timeout"]
