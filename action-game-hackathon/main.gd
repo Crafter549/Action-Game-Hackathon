@@ -9,4 +9,6 @@ func _physics_process(delta):
 		bullet.position = $Player.position
 		bullet.linear_velocity = (get_viewport().get_mouse_position() - bullet.position).normalized() * 2000
 		
+		bullet.rotation = bullet.linear_velocity.angle()
+		
 		add_child(bullet)
