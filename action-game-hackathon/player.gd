@@ -13,6 +13,9 @@ extends CharacterBody2D
 var groundedTimer = INF
 var jumpInputTimer = INF
 var jumpTimer = INF
+var health=3
+signal playerHit
+
 
 func _physics_process(delta):
 	var acc = Vector2(0, 0) # tiles / second^2
@@ -70,4 +73,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _on_hurtbox_body_entered(body):
-	pass # Kill player
+	health-=1
+	if(health<=0):
+		print("dead")
+		playerHit.emit()
