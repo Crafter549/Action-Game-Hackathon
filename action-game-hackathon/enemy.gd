@@ -15,5 +15,4 @@ func _on_shoot_timer_timeout():
 	
 	
 func _on_hurtbox_body_entered(body: Node2D) -> void:
-	print("dead")
 	queue_free()

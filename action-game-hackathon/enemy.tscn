@@ -39,4 +39,4 @@ position = Vector2(-40.5, -5.5)
 shape = SubResource("RectangleShape2D_qi2p4")
 
 [connection signal="timeout" from="Shoot timer" to="." method="_on_shoot_timer_timeout"]
-[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]
