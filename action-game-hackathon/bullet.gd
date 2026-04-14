@@ -5,7 +5,7 @@ func _physics_process(delta):
 		queue_free()
 
 func _on_body_entered(body: Node) -> void:
-	if linear_velocity.length() < 700:
+	if linear_velocity.length() < 500:
 		queue_free()
 
 func _on_inital_timer_timeout() -> void:
