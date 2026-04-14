@@ -15,14 +15,29 @@ bullet_scene = ExtResource("1_ig7tw")
 [node name="Player" parent="." unique_id=71939808 instance=ExtResource("3_1bvp3")]
 position = Vector2(960, 540)
 
-[node name="Enemy" parent="." unique_id=1829678613 instance=ExtResource("5_lquwl")]
-position = Vector2(1295, 616)
-
 [node name="Enemy2" parent="." unique_id=1201280926 instance=ExtResource("5_lquwl")]
 position = Vector2(3366, 326)
 
 [node name="Enemy3" parent="." unique_id=1884337550 instance=ExtResource("5_lquwl")]
 position = Vector2(3005, 264)
+
+[node name="Enemy4" parent="." unique_id=606297602 instance=ExtResource("5_lquwl")]
+position = Vector2(3592, -105)
+
+[node name="Enemy5" parent="." unique_id=1694832712 instance=ExtResource("5_lquwl")]
+position = Vector2(5122, 95)
+
+[node name="Enemy6" parent="." unique_id=1454817622 instance=ExtResource("5_lquwl")]
+position = Vector2(5447, 133)
+
+[node name="Enemy8" parent="." unique_id=1412608660 instance=ExtResource("5_lquwl")]
+position = Vector2(4285, 295)
+
+[node name="Enemy9" parent="." unique_id=176072744 instance=ExtResource("5_lquwl")]
+position = Vector2(4642, 284)
+
+[node name="Enemy7" parent="." unique_id=1650658488 instance=ExtResource("5_lquwl")]
+position = Vector2(5933, 297)
 
 [node name="Camera" type="Camera2D" parent="." unique_id=460998086]
 position = Vector2(960, 540)
