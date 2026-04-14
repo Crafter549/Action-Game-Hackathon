@@ -6,7 +6,7 @@ func _physics_process(delta):
 	$RayCast2D.target_position = get_parent().get_child(1).position - position
 
 func _on_shoot_timer_timeout():
-	if $RayCast2D.get_collider() == get_parent().get_child(1):
+	if $RayCast2D.get_collider() == get_parent().get_child(1) && (get_parent().get_child(1).position - position).length() < 2000:
 		var bullet = bullet_scene.instantiate()
 		
 		bullet.position = position
