@@ -18,5 +18,11 @@ position = Vector2(960, 540)
 [node name="Enemy" parent="." unique_id=1829678613 instance=ExtResource("5_lquwl")]
 position = Vector2(1295, 616)
 
+[node name="Enemy2" parent="." unique_id=1201280926 instance=ExtResource("5_lquwl")]
+position = Vector2(3366, 326)
+
+[node name="Enemy3" parent="." unique_id=1884337550 instance=ExtResource("5_lquwl")]
+position = Vector2(3005, 264)
+
 [node name="Camera" type="Camera2D" parent="." unique_id=460998086]
 position = Vector2(960, 540)
