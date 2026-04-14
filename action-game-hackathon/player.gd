@@ -8,7 +8,7 @@ extends CharacterBody2D
 
 @export var gravity = 60 # tiles / second^2
 @export var jumpVel = 15 # tiles / second
-@export var maxYVel = 20 # tiles / second
+@export var maxYVel = 24 # tiles / second
 
 var groundedTimer = INF
 var jumpInputTimer = INF
