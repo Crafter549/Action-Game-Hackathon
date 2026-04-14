@@ -75,5 +75,4 @@ func _physics_process(delta):
 func _on_hurtbox_body_entered(body):
 	health-=1
 	if(health<=0):
-		print("dead")
 		playerHit.emit()
