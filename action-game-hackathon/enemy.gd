@@ -6,8 +6,8 @@ func _on_shoot_timer_timeout():
 	var bullet = bullet_scene.instantiate()
 	
 	bullet.position = get_parent().get_child(2).position
-	bullet.linear_velocity = (get_parent().get_child(1).position-bullet.position).normalized()*1000
-	bullet.linear_velocity = bullet.linear_velocity.rotated(randf_range(-PI/4,PI/4))
+	bullet.linear_velocity = (get_parent().get_child(1).position - bullet.position + Vector2(0, -100)).normalized() * 1000
+	bullet.linear_velocity = bullet.linear_velocity.rotated(randf_range(-PI/4, PI/4))
 	
 	bullet.rotation = bullet.linear_velocity.angle()
 	
