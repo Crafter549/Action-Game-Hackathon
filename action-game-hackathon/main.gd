@@ -7,9 +7,9 @@ func _physics_process(delta):
 		var bullet = bullet_scene.instantiate()
 		
 		bullet.position = $Player.position
-		bullet.linear_velocity = (get_viewport().get_mouse_position() + $Camera.position - Vector2(960, 540) - bullet.position).normalized() * 2000
+		bullet.linear_velocity = (get_viewport().get_mouse_position() + $Camera.position - Vector2(960, 540) - bullet.position + Vector2(0, -100)).normalized() * 1000
 		
-		bullet.rotation = bullet.linear_velocity.angle()
+		bullet.rotation = (bullet.linear_velocity - $Player.velocity).angle()
 		
 		add_child(bullet)
 	
