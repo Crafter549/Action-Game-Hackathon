@@ -16,6 +16,7 @@ var jumpTimer = INF
 
 var health = 5
 signal playerHit
+signal playerDie
 
 func _physics_process(delta):
 	var acc = Vector2(0, 0) # tiles / second^2
@@ -74,5 +75,7 @@ func _physics_process(delta):
 
 func _on_hurtbox_body_entered(body):
 	health -= 1
-	if(health <= 0):
+	if health <= 0:
+		playerDie.emit()
+	else:
 		playerHit.emit()

@@ -32,7 +32,7 @@ shape = SubResource("CapsuleShape2D_v7oki")
 rect = Rect2(-40, -20, 80, 40)
 
 [node name="Inital Timer" type="Timer" parent="." unique_id=1329141652]
-wait_time = 0.1
+wait_time = 0.25
 autostart = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

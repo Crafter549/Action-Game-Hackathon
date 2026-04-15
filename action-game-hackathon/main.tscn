@@ -13,7 +13,10 @@ bullet_scene = ExtResource("1_ig7tw")
 [node name="ForegroundTiles" parent="." unique_id=1369031904 instance=ExtResource("1_h2yge")]
 
 [node name="Player" parent="." unique_id=71939808 instance=ExtResource("3_1bvp3")]
-position = Vector2(1432, 510)
+position = Vector2(960, 865)
+
+[node name="Camera" type="Camera2D" parent="." unique_id=460998086]
+position = Vector2(960, 540)
 
 [node name="Enemy2" parent="." unique_id=1201280926 instance=ExtResource("5_lquwl")]
 position = Vector2(3366, 326)
@@ -57,5 +60,23 @@ position = Vector2(6921, -181)
 [node name="Enemy15" parent="." unique_id=1266728046 instance=ExtResource("5_lquwl")]
 position = Vector2(7008, -305)
 
-[node name="Camera" type="Camera2D" parent="." unique_id=460998086]
-position = Vector2(960, 540)
+[node name="UI" type="Control" parent="." unique_id=1685572284]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HitOverlay" type="ColorRect" parent="UI" unique_id=144756620]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 1)
+
+[connection signal="playerDie" from="Player" to="." method="_on_player_player_die"]
+[connection signal="playerHit" from="Player" to="." method="_on_player_player_hit"]

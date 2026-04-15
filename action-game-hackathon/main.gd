@@ -13,4 +13,13 @@ func _physics_process(delta):
 		
 		add_child(bullet)
 	
-	$Camera.position += ($Player.position + 0.15 * $Player.velocity + 0.3 * (get_viewport().get_mouse_position() - Vector2(960, 540)) - $Camera.position) * 0.03
+	$Camera.position += ($Player.position + 0.3 * $Player.velocity + 0.4 * (get_viewport().get_mouse_position() - Vector2(960, 540)) - $Camera.position) * 0.03
+	$UI.position = $Camera.position - Vector2(960, 540)
+	
+	$UI/HitOverlay.self_modulate.a -= 0.02
+
+func _on_player_player_hit():
+	$UI/HitOverlay.self_modulate.a = 0.72
+
+func _on_player_player_die():
+	pass # Replace with function body.
