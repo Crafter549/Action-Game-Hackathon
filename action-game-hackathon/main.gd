@@ -23,4 +23,5 @@ func _on_player_player_hit():
 	$UI/HealthLabel.text = "Health: " + str($Player.health)
 
 func _on_player_player_die():
+	$UI/HitOverlay.self_modulate.a = 0.72
 	$UI/HealthLabel.text = "Health: 0"

@@ -74,8 +74,10 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _on_hurtbox_body_entered(body):
-	health -= 1
-	if health <= 0:
-		playerDie.emit()
-	else:
-		playerHit.emit()
+	if $InvincibilityTimer.is_stopped():
+		$InvincibilityTimer.start()
+		health -= 1
+		if health <= 0:
+			playerDie.emit()
+		else:
+			playerHit.emit()
