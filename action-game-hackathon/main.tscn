@@ -78,5 +78,13 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0, 0, 1)
 
+[node name="HealthLabel" type="Label" parent="UI" unique_id=867254818]
+layout_mode = 0
+offset_right = 276.0
+offset_bottom = 88.0
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 64
+text = "Health: 5"
+
 [connection signal="playerDie" from="Player" to="." method="_on_player_player_die"]
 [connection signal="playerHit" from="Player" to="." method="_on_player_player_hit"]

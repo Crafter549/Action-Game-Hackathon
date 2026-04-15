@@ -20,6 +20,7 @@ func _physics_process(delta):
 
 func _on_player_player_hit():
 	$UI/HitOverlay.self_modulate.a = 0.72
+	$UI/HealthLabel.text = "Health: " + str($Player.health)
 
 func _on_player_player_die():
-	pass # Replace with function body.
+	$UI/HealthLabel.text = "Health: 0"
