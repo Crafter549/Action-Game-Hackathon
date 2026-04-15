@@ -11,6 +11,7 @@ func _physics_process(delta):
 			
 			bullet.position = $Player.position
 			bullet.linear_velocity = (get_viewport().get_mouse_position() - Vector2(960, 540) + $Camera.position - bullet.position + Vector2(0, -100)).normalized() * 1000
+			bullet.linear_velocity = bullet.linear_velocity.rotated(randf_range(-PI/32, PI/32))
 			
 			bullet.rotation = (bullet.linear_velocity - $Player.velocity).angle()
 			
