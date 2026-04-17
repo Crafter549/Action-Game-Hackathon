@@ -15,7 +15,7 @@ func _on_shoot_timer_timeout():
 		
 		bullet.rotation = bullet.linear_velocity.angle()
 		
-		get_parent().add_child(bullet)
+		get_parent().get_child(1).add_sibling(bullet)
 	
 	$ShootTimer.wait_time = randf_range(0.9, 1.1)
 

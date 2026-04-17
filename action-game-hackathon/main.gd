@@ -15,7 +15,7 @@ func _physics_process(delta):
 			
 			bullet.rotation = (bullet.linear_velocity - $Player.velocity).angle()
 			
-			add_child(bullet)
+			$Player.add_sibling(bullet)
 		
 		if $UI/HitOverlay.self_modulate.a > 0.02:
 			$UI/HitOverlay.self_modulate.a -= 0.02

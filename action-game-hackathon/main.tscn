@@ -61,7 +61,7 @@ position = Vector2(6921, -181)
 position = Vector2(7008, -305)
 
 [node name="RespawnTimer1" type="Timer" parent="." unique_id=1912689327]
-wait_time = 0.2
+wait_time = 0.4
 one_shot = true
 
 [node name="RespawnTimer2" type="Timer" parent="." unique_id=1681664401]
