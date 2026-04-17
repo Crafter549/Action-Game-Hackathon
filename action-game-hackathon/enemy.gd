@@ -6,7 +6,7 @@ func _physics_process(delta):
 	$RayCast2D.target_position = get_parent().get_child(1).position - position
 
 func _on_shoot_timer_timeout():
-	if $RayCast2D.get_collider() == get_parent().get_child(1) && (get_parent().get_child(1).position - position).length() < 2000:
+	if $RayCast2D.get_collider() == get_parent().get_child(1) && (get_parent().get_child(1).position - position).length() < 1500:
 		var bullet = bullet_scene.instantiate()
 		
 		bullet.position = position
@@ -16,6 +16,8 @@ func _on_shoot_timer_timeout():
 		bullet.rotation = bullet.linear_velocity.angle()
 		
 		get_parent().add_child(bullet)
+	
+	$ShootTimer.wait_time = randf_range(0.9, 1.1)
 
-func _on_hurtbox_body_entered(body: Node2D) -> void:
+func _on_hurtbox_body_entered(body):
 	queue_free()
