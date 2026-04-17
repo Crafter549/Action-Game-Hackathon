@@ -16,7 +16,7 @@ bullet_scene = ExtResource("1_ig7tw")
 position = Vector2(960, 865)
 
 [node name="Camera" type="Camera2D" parent="." unique_id=460998086]
-position = Vector2(960, 540)
+position = Vector2(960, 865)
 
 [node name="Enemy2" parent="." unique_id=1201280926 instance=ExtResource("5_lquwl")]
 position = Vector2(3366, 326)
@@ -60,11 +60,21 @@ position = Vector2(6921, -181)
 [node name="Enemy15" parent="." unique_id=1266728046 instance=ExtResource("5_lquwl")]
 position = Vector2(7008, -305)
 
+[node name="RespawnTimer1" type="Timer" parent="." unique_id=1912689327]
+wait_time = 0.2
+one_shot = true
+
+[node name="RespawnTimer2" type="Timer" parent="." unique_id=1681664401]
+wait_time = 0.2
+one_shot = true
+
 [node name="UI" type="Control" parent="." unique_id=1685572284]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = 325.0
+offset_bottom = 325.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -87,5 +97,44 @@ theme_override_constants/outline_size = 16
 theme_override_font_sizes/font_size = 64
 text = "Health: 5"
 
+[node name="GameOverLabel" type="Label" parent="UI" unique_id=1137383651]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -347.0
+offset_top = -167.5
+offset_right = 347.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 128
+text = "Game Over"
+
+[node name="RespawnButton" type="Button" parent="UI" unique_id=1045424620]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = 10.0
+offset_right = 250.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 96
+text = "Respawn"
+
 [connection signal="playerDie" from="Player" to="." method="_on_player_player_die"]
 [connection signal="playerHit" from="Player" to="." method="_on_player_player_hit"]
+[connection signal="timeout" from="RespawnTimer1" to="." method="_on_respawn_timer_1_timeout"]
+[connection signal="timeout" from="RespawnTimer2" to="." method="_on_respawn_timer_2_timeout"]
+[connection signal="button_down" from="UI/RespawnButton" to="." method="_on_respawn_button_button_down"]
